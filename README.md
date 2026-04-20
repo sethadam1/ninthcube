@@ -27,7 +27,7 @@ General-purpose static helper methods.
 | Method | Description |
 |---|---|
 | `constant($c, $default = "")` | Get a defined constant's value with a fallback default |
-| `generate_password($length = 12)` | Generate a random password from a mixed character set (uses `random_int`) |
+| `generate_password($length = 16)` | Generate a random password from a mixed character set (uses `random_int`) |
 | `get_contrast_color($hex_color)` | Return `#000` or `#fff` for readable text on a given background color |
 | `join_with_and($array)` | Join an array into an English list with an Oxford comma |
 | `longify($input)` | Reverse a base-36 encoded value back to base-10 |
@@ -97,6 +97,34 @@ echo Time::time_elapsed('2025-12-01');
 // Encrypt a value (requires CRYPT_KEY and CRYPT_IV)
 $encrypted = Encryption::encrypt('secret');
 $decrypted = Encryption::decrypt($encrypted);
+```
+
+Alternatively: 
+
+```php
+use NinthCube\Util;
+use NinthCube\Encryption;
+use NinthCube\Time;
+use NinthCube\Location;
+
+// Generate a hash
+$hash = NinthCube\Util::new_hash();
+
+// Slugify a title
+$slug = NinthCube\Util::slugify('Hello World!'); // "hello-world"
+
+// Truncate text (only if it saves meaningful length)
+$short = NinthCube\Util::truncate_text('A very long string...', 50);
+
+// Format a location
+$loc = NinthCube\Location::venue('Hartford', 'CT', 'US');
+
+// Relative time
+echo NinthCube\Time::time_elapsed('1997-11-22');
+
+// Encrypt a value (requires CRYPT_KEY and CRYPT_IV)
+$encrypted = NinthCube\Encryption::encrypt('secret');
+$decrypted = NinthCube\Encryption::decrypt($encrypted);
 ```
 
 ## Requirements
