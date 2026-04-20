@@ -102,11 +102,6 @@ $decrypted = Encryption::decrypt($encrypted);
 Alternatively: 
 
 ```php
-use NinthCube\Util;
-use NinthCube\Encryption;
-use NinthCube\Time;
-use NinthCube\Location;
-
 // Generate a hash
 $hash = NinthCube\Util::new_hash();
 
