@@ -103,23 +103,23 @@ Alternatively:
 
 ```php
 // Generate a hash
-$hash = NinthCube\Util::new_hash();
+$hash = \NinthCube\Util::new_hash();
 
 // Slugify a title
-$slug = NinthCube\Util::slugify('Hello World!'); // "hello-world"
+$slug = \NinthCube\Util::slugify('Hello World!'); // "hello-world"
 
 // Truncate text (only if it saves meaningful length)
-$short = NinthCube\Util::truncate_text('A very long string...', 50);
+$short = \NinthCube\Util::truncate_text('A very long string...', 50);
 
 // Format a location
-$loc = NinthCube\Location::venue('Hartford', 'CT', 'US');
+$loc = \NinthCube\Location::venue('Hartford', 'CT', 'US');
 
 // Relative time
-echo NinthCube\Time::time_elapsed('1997-11-22');
+echo \NinthCube\Time::time_elapsed('1997-11-22');
 
 // Encrypt a value (requires CRYPT_KEY and CRYPT_IV)
-$encrypted = NinthCube\Encryption::encrypt('secret');
-$decrypted = NinthCube\Encryption::decrypt($encrypted);
+$encrypted = \NinthCube\Encryption::encrypt('secret');
+$decrypted = \NinthCube\Encryption::decrypt($encrypted);
 ```
 
 ## Requirements
